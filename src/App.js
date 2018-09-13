@@ -5,7 +5,7 @@ import './App.css';
 class SmallButtonCalc extends React.Component {
     render() {
         return (
-            <button className="square">
+            <button className="square" onClick={()=>this.props.onClick}>
                 {this.props.value}
             </button>
         );
@@ -25,12 +25,15 @@ class BigButtonCalc extends React.Component {
 class FormCalculator extends React.Component{
     constructor(props){
         super(props);
-        this.state = {value: ''};
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(i){
+        alert('Hello from button: ' + i);
     }
 
     renderSmallButtonCalc(i) {
-        return <SmallButtonCalc value={i} />;
+        return <SmallButtonCalc value={i} onClick={()=>this.handleClick} />;
     }
 
     renderBigButtonCalc(i) {
@@ -38,7 +41,7 @@ class FormCalculator extends React.Component{
     }
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form onClick={this.handleClick}>
                 <div>
                     <div className="board-row">
                         <input type="text" className="input-field" />
