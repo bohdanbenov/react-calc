@@ -5,7 +5,7 @@ import './App.css';
 class SmallButtonCalc extends React.Component {
     render() {
         return (
-            <button className="square" onClick={()=>this.props.onClick}>
+            <button className="square" onClick={()=>this.props.onClick()}>
                 {this.props.value}
             </button>
         );
@@ -15,7 +15,7 @@ class SmallButtonCalc extends React.Component {
 class BigButtonCalc extends React.Component {
     render() {
         return (
-            <button className="big-square">
+            <button className="big-square" onClick={()=>this.props.onClick()}>
                 {this.props.value}
             </button>
         );
@@ -25,26 +25,44 @@ class BigButtonCalc extends React.Component {
 class FormCalculator extends React.Component{
     constructor(props){
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            my_arr: '',
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(i){
-        alert('Hello from button: ' + i);
+        // my_arr.push(i);
+        let tmp = this.state.my_arr;
+        tmp += i;
+        this.setState({my_arr: tmp});
+    }
+
+    handleBigClick(i){
+        // alert('Now my array is: ' + my_arr.toString());
+        if(i === "clear") {
+            let empty_string = "";
+            this.setState({my_arr: empty_string});
+        }
+
+        if(i === "="){
+            
+        }
     }
 
     renderSmallButtonCalc(i) {
-        return <SmallButtonCalc value={i} onClick={()=>this.handleClick} />;
+        return <SmallButtonCalc value={i} onClick={()=>this.handleClick(i)} />;
     }
 
     renderBigButtonCalc(i) {
-        return <BigButtonCalc value={i} />;
+        return <BigButtonCalc value={i} onClick={()=>this.handleBigClick(i)} />;
     }
     render(){
         return(
-            <form onClick={this.handleClick}>
+            <div>
                 <div>
                     <div className="board-row">
-                        <input type="text" className="input-field" />
+                        <input type="text" className="input-field" value={this.state.my_arr} />
                     </div>
                     <div className="board-row">
                         {this.renderBigButtonCalc('clear')}
@@ -73,7 +91,7 @@ class FormCalculator extends React.Component{
                         {this.renderSmallButtonCalc(0)}
                     </div>
                 </div>
-            </form>
+            </div>
         );
     }
 }
