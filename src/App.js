@@ -77,4 +77,5 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-export default FormCalculator;
+
+export default Form;
