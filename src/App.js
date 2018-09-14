@@ -43,6 +43,7 @@ class FormCalculator extends React.Component{
         }
 
         if(i === "="){
+            /*
             if(this.state.my_arr.includes("+")){
                 let args = this.state.my_arr.split("+");
                 let tmp = parseFloat(args[0]) + parseFloat(args[1]);
@@ -65,6 +66,7 @@ class FormCalculator extends React.Component{
                 let tmp = parseFloat(args[0]) / parseFloat(args[1]);
                 this.setState({my_arr: tmp.toString()});
             }
+            */
         }
     }
 
