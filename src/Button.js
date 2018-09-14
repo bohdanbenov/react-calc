@@ -1,7 +1,7 @@
 import './Button.css';
 import React from "react";
 
-class ButtonCalc extends React.Component {
+class Button extends React.Component {
     render() {
         return (
             <button className={this.getClass(this.props.type)} onClick={()=>this.props.onClick()}>
@@ -26,17 +26,6 @@ class ButtonCalc extends React.Component {
                 break;
         }
     }
-
-    // getTypeOfButton(){
-    //     if(this.props.value === "+" || this.props.value === "-" || this.props.value === "*" || this.props.value === "/")
-    //         return "arithmetic-buttons";
-    //     else if(this.props.value === "=")
-    //         return "equal-button";
-    //     else if(this.props.value === "clear")
-    //         return "clear-button";
-    //     else
-    //         return "square";
-    // }
 }
 
-export default ButtonCalc;
+export default Button;
