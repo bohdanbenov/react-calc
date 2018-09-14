@@ -58,7 +58,7 @@ class FormCalculator extends React.Component{
             <div>
                 <div>
                     <div className="board-row">
-                        <input type="text" className="input-field" value={this.state.my_arr} />
+                        <input readOnly type="text" className="input-field" value={this.state.my_arr} />
                     </div>
                     <div className="board-row">
                         {this.renderButtonCalc('clear')}
