@@ -16,8 +16,7 @@ class Form extends React.Component{
         this.setState({math_expression: tmp});
 
         if(i === "clear") {
-            let empty_string = "";
-            this.setState({math_expression: empty_string});
+            this.setState({math_expression: ""});
         }
 
         if(i === "="){
@@ -26,14 +25,13 @@ class Form extends React.Component{
                 this.setState({math_expression: result.toString()});
             } catch(e){
                 alert("Your math expression are wrong!!!");
-                console.log('Something went wrong!!!!');
                 this.setState({math_expression: ""});
             }
         }
     }
 
-    renderButton(i) {
-        return <Button value={i} onClick={()=>this.handleClick(i)} />;
+    renderButton(i, style) {
+        return <Button value={i} type={style} onClick={()=>this.handleClick(i)} />;
     }
 
     render(){
@@ -44,30 +42,30 @@ class Form extends React.Component{
                         <input readOnly type="text" className="input-field" value={this.state.math_expression} />
                     </div>
                     <div className="board-row">
-                        {this.renderButton('clear')}
-                        {this.renderButton('/')}
+                        {this.renderButton('clear', 'danger')}
+                        {this.renderButton('/', 'primary')}
                     </div>
                     <div className="board-row">
-                        {this.renderButton(7)}
-                        {this.renderButton(8)}
-                        {this.renderButton(9)}
-                        {this.renderButton('*')}
+                        {this.renderButton(7, 'basic')}
+                        {this.renderButton(8, 'basic')}
+                        {this.renderButton(9, 'basic')}
+                        {this.renderButton('*', 'primary')}
                     </div>
                     <div className="board-row">
-                        {this.renderButton(4)}
-                        {this.renderButton(5)}
-                        {this.renderButton(6)}
-                        {this.renderButton('-')}
+                        {this.renderButton(4, 'basic')}
+                        {this.renderButton(5, 'basic')}
+                        {this.renderButton(6, 'basic')}
+                        {this.renderButton('-', 'primary')}
                     </div>
                     <div className="board-row">
-                        {this.renderButton(1)}
-                        {this.renderButton(2)}
-                        {this.renderButton(3)}
-                        {this.renderButton('+')}
+                        {this.renderButton(1, 'basic')}
+                        {this.renderButton(2, 'basic')}
+                        {this.renderButton(3, 'basic')}
+                        {this.renderButton('+', 'primary')}
                     </div>
                     <div className="board-row">
-                        {this.renderButton('=')}
-                        {this.renderButton(0)}
+                        {this.renderButton('=', 'success')}
+                        {this.renderButton(0, 'basic')}
                     </div>
                 </div>
             </div>
