@@ -13,66 +13,6 @@ ol, ul {
   display: table;
 }
 
-.square {
-  background: #FEFFFF;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 45px;
-  height: 45px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 45px;
-}
-
-.arithmetic-buttons{
-  background: #F12650;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 45px;
-  height: 45px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 45px;
-}
-
-.equal-button{
-  background: #F12650;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 45px;
-  height: 45px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 133px;
-}
-
-.clear-button{
-    background: #ffffff;
-    border: 1px solid #A57D88;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 45px;
-    height: 45px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 133px;
-}
-
 .input-field{
   background: #433437;
   border: 1px solid #A57D88;
@@ -87,12 +27,4 @@ ol, ul {
   text-align: center;
   color: #FEFFFF;
   width: 175px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
 }
