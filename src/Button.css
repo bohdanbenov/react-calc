@@ -1,0 +1,67 @@
+.basic {
+    background: #FEFFFF;
+    border: 1px solid #A57D88;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 45px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 45px;
+}
+
+.primary{
+    background: #F12650;
+    border: 1px solid #A57D88;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 45px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 45px;
+}
+
+.success{
+    background: #F12650;
+    border: 1px solid #A57D88;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 45px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 133px;
+}
+
+.danger{
+    background: #ffffff;
+    border: 1px solid #A57D88;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 45px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 133px;
+}
+
+.basic:focus {
+    outline: none;
+}
+
+.kbd-navigation .basic:focus {
+    background: #ddd;
+}
