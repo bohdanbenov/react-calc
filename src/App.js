@@ -43,6 +43,11 @@ class FormCalculator extends React.Component{
         }
 
         if(i === "="){
+            let result = eval(this.state.my_arr);
+            console.log(result);
+            this.setState({mu_arr: result.toString()});
+            this.setState({mu_arr: result.toString()});
+            // this.state({my_arr: result.toString()});
             /*
             if(this.state.my_arr.includes("+")){
                 let args = this.state.my_arr.split("+");
