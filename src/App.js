@@ -2,23 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-class SmallButtonCalc extends React.Component {
+class ButtonCalc extends React.Component {
     render() {
         return (
-            <button className="square" onClick={()=>this.props.onClick()}>
+            <button className={this.getTypeOfButton()} onClick={()=>this.props.onClick()}>
                 {this.props.value}
             </button>
         );
     }
-}
 
-class BigButtonCalc extends React.Component {
-    render() {
-        return (
-            <button className="big-square" onClick={()=>this.props.onClick()}>
-                {this.props.value}
-            </button>
-        );
+    getTypeOfButton(){
+        if(this.props.value === "+" || this.props.value === "-" || this.props.value === "*" || this.props.value === "/")
+            return "arithmetic-buttons";
+        else if(this.props.value === "=")
+            return "equal-button";
+        else if(this.props.value === "clear")
+            return "clear-button";
+        else
+            return "square";
     }
 }
 
@@ -32,31 +33,45 @@ class FormCalculator extends React.Component{
     }
 
     handleClick(i){
-        // my_arr.push(i);
         let tmp = this.state.my_arr;
         tmp += i;
         this.setState({my_arr: tmp});
-    }
 
-    handleBigClick(i){
-        // alert('Now my array is: ' + my_arr.toString());
         if(i === "clear") {
             let empty_string = "";
             this.setState({my_arr: empty_string});
         }
 
         if(i === "="){
-            
+            if(this.state.my_arr.includes("+")){
+                let args = this.state.my_arr.split("+");
+                let tmp = parseFloat(args[0]) + parseFloat(args[1]);
+                this.setState({my_arr: tmp.toString()});
+            }
+            else if(this.state.my_arr.includes("-")){
+                let args = this.state.my_arr.split("-");
+                let tmp = parseFloat(args[0]) - parseFloat(args[1]);
+                this.setState({my_arr: tmp.toString()});
+            }
+
+            else if(this.state.my_arr.includes("*")){
+                let args = this.state.my_arr.split("*");
+                let tmp = parseFloat(args[0]) * parseFloat(args[1]);
+                this.setState({my_arr: tmp.toString()});
+            }
+
+            else if(this.state.my_arr.includes("/")){
+                let args = this.state.my_arr.split("/");
+                let tmp = parseFloat(args[0]) / parseFloat(args[1]);
+                this.setState({my_arr: tmp.toString()});
+            }
         }
     }
 
-    renderSmallButtonCalc(i) {
-        return <SmallButtonCalc value={i} onClick={()=>this.handleClick(i)} />;
+    renderButtonCalc(i) {
+        return <ButtonCalc value={i} onClick={()=>this.handleClick(i)} />;
     }
 
-    renderBigButtonCalc(i) {
-        return <BigButtonCalc value={i} onClick={()=>this.handleBigClick(i)} />;
-    }
     render(){
         return(
             <div>
@@ -65,30 +80,30 @@ class FormCalculator extends React.Component{
                         <input type="text" className="input-field" value={this.state.my_arr} />
                     </div>
                     <div className="board-row">
-                        {this.renderBigButtonCalc('clear')}
-                        {this.renderSmallButtonCalc('/')}
+                        {this.renderButtonCalc('clear')}
+                        {this.renderButtonCalc('/')}
                     </div>
                     <div className="board-row">
-                        {this.renderSmallButtonCalc(7)}
-                        {this.renderSmallButtonCalc(8)}
-                        {this.renderSmallButtonCalc(9)}
-                        {this.renderSmallButtonCalc('*')}
+                        {this.renderButtonCalc(7)}
+                        {this.renderButtonCalc(8)}
+                        {this.renderButtonCalc(9)}
+                        {this.renderButtonCalc('*')}
                     </div>
                     <div className="board-row">
-                        {this.renderSmallButtonCalc(4)}
-                        {this.renderSmallButtonCalc(5)}
-                        {this.renderSmallButtonCalc(6)}
-                        {this.renderSmallButtonCalc('-')}
+                        {this.renderButtonCalc(4)}
+                        {this.renderButtonCalc(5)}
+                        {this.renderButtonCalc(6)}
+                        {this.renderButtonCalc('-')}
                     </div>
                     <div className="board-row">
-                        {this.renderSmallButtonCalc(1)}
-                        {this.renderSmallButtonCalc(2)}
-                        {this.renderSmallButtonCalc(3)}
-                        {this.renderSmallButtonCalc('+')}
+                        {this.renderButtonCalc(1)}
+                        {this.renderButtonCalc(2)}
+                        {this.renderButtonCalc(3)}
+                        {this.renderButtonCalc('+')}
                     </div>
                     <div className="board-row">
-                        <input type="submit" value="=" className="big-square" />
-                        {this.renderSmallButtonCalc(0)}
+                        {this.renderButtonCalc('=')}
+                        {this.renderButtonCalc(0)}
                     </div>
                 </div>
             </div>
