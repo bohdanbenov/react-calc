@@ -13,86 +13,18 @@ ol, ul {
   display: table;
 }
 
-.square {
-  background: #FEFFFF;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.arithmetic-buttons{
-  background: #F12650;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.equal-button{
-  background: #F12650;
-  border: 1px solid #A57D88;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 100px;
-}
-
-.clear-button{
-    background: #ffffff;
-    border: 1px solid #A57D88;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 100px;
-}
-
 .input-field{
   background: #433437;
   border: 1px solid #A57D88;
   float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 45px;
+  height: 45px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
   color: #FEFFFF;
-  width: 131px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
+  width: 175px;
 }
