@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import SimpleCalculator from './SimpleCalculator'
-import Schedule from './Schedule'
+import BmiCalculator from './BmiCalculator'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -14,7 +14,7 @@ const Main = () => (
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/simple-calculator' component={SimpleCalculator}/>
-            <Route path='/bmi-calculator' component={Schedule}/>
+            <Route path='/bmi-calculator' component={BmiCalculator}/>
         </Switch>
     </main>
 )
