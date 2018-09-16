@@ -1,0 +1,15 @@
+.input-field{
+    background: #433437;
+    border: 1px solid #A57D88;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 45px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    color: #FEFFFF;
+    width: 175px;
+}
