@@ -20,6 +20,8 @@ class Button extends React.Component {
                 break;
             case 'success':
                 return 'success';
+            case 'success center':
+                return 'success center';
                 break;
             case 'danger':
                 return 'danger';
