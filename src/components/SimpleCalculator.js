@@ -1,5 +1,6 @@
 import React from "react";
 import Button from './Button';
+import InputField from './InputField'
 
 class SimpleCalculator extends React.Component{
     constructor(props){
@@ -34,12 +35,16 @@ class SimpleCalculator extends React.Component{
         return <Button value={i} type={style} onClick={()=>this.handleClick(i)} />;
     }
 
+    renderInputField(i) {
+        return <InputField value={i}/>;
+    }
+
     render(){
         return(
             <div>
                 <div>
                     <div className="board-row">
-                        <input readOnly type="text" className="input-field" value={this.state.math_expression} />
+                        {this.renderInputField(this.state.math_expression)}
                     </div>
                     <div className="board-row">
                         {this.renderButton('clear', 'danger')}
