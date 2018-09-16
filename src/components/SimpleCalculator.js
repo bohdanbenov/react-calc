@@ -1,7 +1,7 @@
 import React from "react";
 import Button from './Button';
 
-class Form extends React.Component{
+class SimpleCalculator extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -73,4 +73,4 @@ class Form extends React.Component{
     }
 }
 
-export default Form;
+export default SimpleCalculator;
