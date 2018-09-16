@@ -1,4 +1,6 @@
 import React from "react";
+import Button from './Button';
+import '../stylesheets/App.css'
 
 class BmiCalculator extends React.Component{
     constructor(props){
@@ -6,6 +8,7 @@ class BmiCalculator extends React.Component{
         this.state = {
             weight: '',
             height: '',
+            bmi: '',
         };
     }
 
@@ -17,19 +20,38 @@ class BmiCalculator extends React.Component{
         this.setState({height: event.target.value})
     }
 
+    handleClick(){
+        let bmi = this.state.weight/((this.state.height) * (this.state.height));
+        this.setState({bmi: bmi});
+    }
+
+    renderButton(i, style) {
+        return <Button value={i} type={style} onClick={()=>this.handleClick()} />;
+    }
+
     render(){
         return(
-            <div>
-                <div className={'board-row'}>
-                    <input type="text" onChange={this.handleWeightField.bind(this)}/>
+            <div className={'center'}>
+                <div className={'margin-input'}>
+                    <label htmlFor='weight'>Enter your weight: </label>
+                    <input type="text" id={'weight'} onChange={this.handleWeightField.bind(this)}/>
                 </div>
 
-                <div className={'board-row'}>
-                    <input type="text" onChange={this.handleHeightField.bind(this)}/>
+                <div className={'margin-input'}>
+                    <label htmlFor='height'>Enter your height: </label>
+                    <input type="text" id={'height'} onChange={this.handleHeightField.bind(this)}/>
                 </div>
 
-                <h2>Your weight: {this.state.weight}</h2>
-                <h2>Your height: {this.state.height}</h2>
+                <div>
+                    <h4>Your weight: {this.state.weight}</h4>
+                    <h4>Your height: {this.state.height}</h4>
+                    <img src="http://www.journey-fit.com/wp-content/uploads/2016/09/bmi-categories_med.jpeg" alt="bmi" />
+                    <h4>Your bmi: {this.state.bmi}</h4>
+                </div>
+
+                <div>
+                    {this.renderButton('BMI', 'success')}
+                </div>
             </div>
         );
     }
