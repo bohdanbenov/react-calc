@@ -1,3 +1,9 @@
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
 .basic {
     background: #FEFFFF;
     border: 1px solid #A57D88;

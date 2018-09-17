@@ -1,0 +1,17 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.center{
+    text-align: center;
+}
+
+.margin-input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
